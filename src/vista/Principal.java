@@ -28,13 +28,13 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        Contenedor = new javax.swing.JInternalFrame();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ItemSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        ItemProgramas = new javax.swing.JMenuItem();
+        ItemAsignaturas = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -50,22 +50,22 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jInternalFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        jInternalFrame1.setVisible(true);
+        Contenedor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        Contenedor.setVisible(false);
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor.getContentPane());
+        Contenedor.getContentPane().setLayout(ContenedorLayout);
+        ContenedorLayout.setHorizontalGroup(
+            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        ContenedorLayout.setVerticalGroup(
+            ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        desktopPane.add(jInternalFrame1);
-        jInternalFrame1.setBounds(180, 30, 310, 200);
+        desktopPane.add(Contenedor);
+        Contenedor.setBounds(180, 30, 310, 200);
 
         jMenu1.setText("Archivo");
 
@@ -77,13 +77,13 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu2.setText("Parametrización");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Programas");
-        jMenu2.add(jMenuItem2);
+        ItemProgramas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        ItemProgramas.setText("Programas");
+        jMenu2.add(ItemProgramas);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Asignaturas");
-        jMenu2.add(jMenuItem3);
+        ItemAsignaturas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        ItemAsignaturas.setText("Asignaturas");
+        jMenu2.add(ItemAsignaturas);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setText("Tipos de Documentos");
@@ -193,9 +193,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JInternalFrame Contenedor;
+    public javax.swing.JMenuItem ItemAsignaturas;
+    public javax.swing.JMenuItem ItemProgramas;
     public javax.swing.JMenuItem ItemSalir;
-    private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JInternalFrame jInternalFrame1;
+    public javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -204,8 +206,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

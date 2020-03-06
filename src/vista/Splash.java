@@ -49,6 +49,8 @@ public class Splash extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        setType(java.awt.Window.Type.POPUP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
