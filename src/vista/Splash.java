@@ -5,17 +5,38 @@
  */
 package vista;
 
+import controlador.LoginController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author estudiante
  */
-public class icono extends javax.swing.JFrame {
+public class Splash extends javax.swing.JFrame implements Runnable {
 
+    Thread t;
     /**
      * Creates new form icono
      */
-    public icono() {
+    public Splash() {
         initComponents();
+    }
+    
+    public void run() {
+        try {
+            this.setLocationRelativeTo(null);
+            this.setVisible(true);
+            t.sleep(5000);
+            this.dispose();
+            
+            Login viewLogin = new Login();
+            LoginController loginController = new LoginController(viewLogin);
+            viewLogin.setVisible(true);
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,20 +81,21 @@ public class icono extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(icono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(icono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(icono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(icono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new icono().setVisible(true);
+                new Splash().setVisible(true);
             }
         });
     }
