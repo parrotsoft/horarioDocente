@@ -35,20 +35,22 @@ public class Principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         ItemProgramas = new javax.swing.JMenuItem();
         ItemAsignaturas = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        ItemTiposDocumentos = new javax.swing.JMenuItem();
+        ItemSalones = new javax.swing.JMenuItem();
+        ItemDias = new javax.swing.JMenuItem();
+        ItemProfesiones = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        ItemRoles = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        ItemMiPerfil = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        ItemDocentes = new javax.swing.JMenuItem();
+        ItemDisponibilidad = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desktopPane.setLayout(null);
 
         Contenedor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         Contenedor.setVisible(false);
@@ -85,52 +87,52 @@ public class Principal extends javax.swing.JFrame {
         ItemAsignaturas.setText("Asignaturas");
         jMenu2.add(ItemAsignaturas);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Tipos de Documentos");
-        jMenu2.add(jMenuItem4);
+        ItemTiposDocumentos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        ItemTiposDocumentos.setText("Tipos de Documentos");
+        jMenu2.add(ItemTiposDocumentos);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setText("Salones");
-        jMenu2.add(jMenuItem5);
+        ItemSalones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        ItemSalones.setText("Salones");
+        jMenu2.add(ItemSalones);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setText("Dias");
-        jMenu2.add(jMenuItem6);
+        ItemDias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        ItemDias.setText("Dias");
+        jMenu2.add(ItemDias);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setText("Profesiones");
-        jMenu2.add(jMenuItem7);
+        ItemProfesiones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        ItemProfesiones.setText("Profesiones");
+        jMenu2.add(ItemProfesiones);
 
         menuBar.add(jMenu2);
 
         jMenu3.setText("Seguridad");
 
-        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setText("Roles");
-        jMenu3.add(jMenuItem8);
+        ItemRoles.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        ItemRoles.setText("Roles");
+        jMenu3.add(ItemRoles);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setText("Usuarios");
         jMenu3.add(jMenuItem9);
 
-        jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem12.setText("Mi Perfil");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        ItemMiPerfil.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        ItemMiPerfil.setText("Mi Perfil");
+        ItemMiPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                ItemMiPerfilActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem12);
+        jMenu3.add(ItemMiPerfil);
 
         menuBar.add(jMenu3);
 
         jMenu4.setText("Administración");
 
-        jMenuItem10.setText("Docentes");
-        jMenu4.add(jMenuItem10);
+        ItemDocentes.setText("Docentes");
+        jMenu4.add(ItemDocentes);
 
-        jMenuItem11.setText("Disponibilidades");
-        jMenu4.add(jMenuItem11);
+        ItemDisponibilidad.setText("Disponibilidades");
+        jMenu4.add(ItemDisponibilidad);
 
         menuBar.add(jMenu4);
 
@@ -153,9 +155,9 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    private void ItemMiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemMiPerfilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
+    }//GEN-LAST:event_ItemMiPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,22 +197,22 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JInternalFrame Contenedor;
     public javax.swing.JMenuItem ItemAsignaturas;
+    public javax.swing.JMenuItem ItemDias;
+    public javax.swing.JMenuItem ItemDisponibilidad;
+    public javax.swing.JMenuItem ItemDocentes;
+    public javax.swing.JMenuItem ItemMiPerfil;
+    public javax.swing.JMenuItem ItemProfesiones;
     public javax.swing.JMenuItem ItemProgramas;
+    public javax.swing.JMenuItem ItemRoles;
     public javax.swing.JMenuItem ItemSalir;
+    public javax.swing.JMenuItem ItemSalones;
+    public javax.swing.JMenuItem ItemTiposDocumentos;
     public javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
