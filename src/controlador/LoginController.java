@@ -22,6 +22,7 @@ public class LoginController implements ActionListener {
     public LoginController(Login viewLogin) {
         this.viewLogin = viewLogin;
         this.viewLogin.btnEntrar.addActionListener(this);
+        this.viewLogin.btnCancelar.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -30,6 +31,10 @@ public class LoginController implements ActionListener {
             PrincipalController principalController = new PrincipalController(this.viewPrincipal);
             this.viewPrincipal.setVisible(true);
             this.viewLogin.dispose();
+        }
+        
+        if (e.getSource() == this.viewLogin.btnCancelar) {
+            System.exit(0);
         }
     }
 }

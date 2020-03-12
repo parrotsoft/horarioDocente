@@ -5,6 +5,9 @@
  */
 package vista;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author estudiante
@@ -16,6 +19,9 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        desktopPane.setSize(screenSize.width, screenSize.height);
     }
 
     /**
