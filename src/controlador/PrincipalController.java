@@ -13,6 +13,7 @@ import vista.Asignaturas;
 import vista.Dias;
 import vista.Disponibilidad;
 import vista.Docentes;
+import vista.Horarios;
 import vista.MiPerfil;
 import vista.Profesiones;
 import vista.Programas;
@@ -37,6 +38,7 @@ public class PrincipalController implements ActionListener {
     Docentes viewDocentes = new Docentes();
     Disponibilidad viewDisponibilidad = new Disponibilidad();
     Usuarios viewUsuarios = new Usuarios();
+    Horarios viewHorarios = new Horarios();
     
     
     public PrincipalController(Principal viewPrincipal) {
@@ -53,6 +55,7 @@ public class PrincipalController implements ActionListener {
         this.viewPrincipal.ItemDocentes.addActionListener(this);
         this.viewPrincipal.ItemDisponibilidad.addActionListener(this);
         this.viewPrincipal.ItemUsuarios.addActionListener(this);
+        this.viewPrincipal.ItemHorarios.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -106,6 +109,10 @@ public class PrincipalController implements ActionListener {
         
         if (e.getSource() == this.viewPrincipal.ItemUsuarios) {
             this.viewPrincipal.desktopPane.add(viewUsuarios);
+        }
+        
+        if (e.getSource() ==this.viewPrincipal.ItemHorarios) {
+            this.viewPrincipal.desktopPane.add(viewHorarios);
         }
     }
 }

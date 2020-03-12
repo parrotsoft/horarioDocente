@@ -52,11 +52,10 @@ public class Principal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         ItemDocentes = new javax.swing.JMenuItem();
         ItemDisponibilidad = new javax.swing.JMenuItem();
+        ItemHorarios = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        desktopPane.setLayout(null);
 
         Contenedor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         Contenedor.setVisible(false);
@@ -140,6 +139,9 @@ public class Principal extends javax.swing.JFrame {
         ItemDisponibilidad.setText("Disponibilidades");
         jMenu4.add(ItemDisponibilidad);
 
+        ItemHorarios.setText("Horarios");
+        jMenu4.add(ItemHorarios);
+
         menuBar.add(jMenu4);
 
         jMenu5.setText("Reportes");
@@ -206,6 +208,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem ItemDias;
     public javax.swing.JMenuItem ItemDisponibilidad;
     public javax.swing.JMenuItem ItemDocentes;
+    public javax.swing.JMenuItem ItemHorarios;
     public javax.swing.JMenuItem ItemMiPerfil;
     public javax.swing.JMenuItem ItemProfesiones;
     public javax.swing.JMenuItem ItemProgramas;

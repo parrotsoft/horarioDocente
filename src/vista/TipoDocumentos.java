@@ -46,8 +46,6 @@ public class TipoDocumentos extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Descripcion:");
 
-        jTextField1.setText("jTextField1");
-
         jButton1.setText("Cancelar");
 
         jButton2.setText("Guardar");
@@ -100,13 +98,13 @@ public class TipoDocumentos extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Descripción"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -128,7 +126,7 @@ public class TipoDocumentos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
