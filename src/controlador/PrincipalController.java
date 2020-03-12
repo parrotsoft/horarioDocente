@@ -19,6 +19,7 @@ import vista.Programas;
 import vista.Roles;
 import vista.Salones;
 import vista.TipoDocumentos;
+import vista.Usuarios;
 /**
  *
  * @author estudiante
@@ -35,6 +36,7 @@ public class PrincipalController implements ActionListener {
     MiPerfil viewMiPerfil = new MiPerfil();
     Docentes viewDocentes = new Docentes();
     Disponibilidad viewDisponibilidad = new Disponibilidad();
+    Usuarios viewUsuarios = new Usuarios();
     
     
     public PrincipalController(Principal viewPrincipal) {
@@ -50,6 +52,7 @@ public class PrincipalController implements ActionListener {
         this.viewPrincipal.ItemMiPerfil.addActionListener(this);
         this.viewPrincipal.ItemDocentes.addActionListener(this);
         this.viewPrincipal.ItemDisponibilidad.addActionListener(this);
+        this.viewPrincipal.ItemUsuarios.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -99,6 +102,10 @@ public class PrincipalController implements ActionListener {
         
         if (e.getSource() == this.viewPrincipal.ItemDisponibilidad) {
             this.viewPrincipal.desktopPane.add(viewDisponibilidad);
+        }
+        
+        if (e.getSource() == this.viewPrincipal.ItemUsuarios) {
+            this.viewPrincipal.desktopPane.add(viewUsuarios);
         }
     }
 }

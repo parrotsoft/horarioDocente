@@ -41,7 +41,7 @@ public class Principal extends javax.swing.JFrame {
         ItemProfesiones = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         ItemRoles = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        ItemUsuarios = new javax.swing.JMenuItem();
         ItemMiPerfil = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         ItemDocentes = new javax.swing.JMenuItem();
@@ -111,9 +111,9 @@ public class Principal extends javax.swing.JFrame {
         ItemRoles.setText("Roles");
         jMenu3.add(ItemRoles);
 
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem9.setText("Usuarios");
-        jMenu3.add(jMenuItem9);
+        ItemUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        ItemUsuarios.setText("Usuarios");
+        jMenu3.add(ItemUsuarios);
 
         ItemMiPerfil.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         ItemMiPerfil.setText("Mi Perfil");
@@ -207,13 +207,13 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem ItemSalir;
     public javax.swing.JMenuItem ItemSalones;
     public javax.swing.JMenuItem ItemTiposDocumentos;
+    public javax.swing.JMenuItem ItemUsuarios;
     public javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBar;
     // End of variables declaration//GEN-END:variables
 
