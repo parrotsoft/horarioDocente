@@ -57,6 +57,8 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        desktopPane.setLayout(null);
+
         Contenedor.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         Contenedor.setVisible(false);
 
