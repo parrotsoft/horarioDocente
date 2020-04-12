@@ -16,6 +16,10 @@ public class Usuario {
     private int rolId;
     private boolean estado;
 
+    public Usuario() {
+        
+    }
+    
     public Usuario(int id, String usuario, String clave, int rolId, boolean estado) {
         this.id = id;
         this.usuario = usuario;

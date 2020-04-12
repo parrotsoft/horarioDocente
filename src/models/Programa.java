@@ -13,6 +13,10 @@ public class Programa {
    private int id;
    private String descripcion;
    private boolean estado;
+   
+   public Programa() {
+       
+   }
 
     public Programa(int id, String descripcion, boolean estado) {
         this.id = id;

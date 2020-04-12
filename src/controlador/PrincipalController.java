@@ -63,12 +63,11 @@ public class PrincipalController implements ActionListener {
             System.exit(0);
         }
         if (e.getSource() == this.viewPrincipal.ItemProgramas) {
-            if (!this.viewPrincipal.desktopPane.isAncestorOf(viewProgramas)) {
-                this.viewPrincipal.desktopPane.add(viewProgramas);    
-            } else {
-                this.viewPrincipal.desktopPane.setSelectedFrame(viewProgramas);
-                this.viewProgramas.setVisible(true);
-            }
+            Programas viewProgramas = new Programas();
+            ProgramaController controllerProgramas = new ProgramaController(viewProgramas);
+            this.viewPrincipal.desktopPane.add(viewProgramas);
+            viewProgramas.toFront();
+            viewProgramas.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemAsignaturas) {

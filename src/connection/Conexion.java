@@ -19,9 +19,6 @@ public class Conexion {
      public static Connection conectart() throws ClassNotFoundException {
         Connection con = null;
         
-        String password = "Mla1043605421";
-        String usuario = "root";
-        
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","");            
