@@ -2,10 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Principal.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/PrincipalController.java</file>
-        </group>
         <group/>
+        <group>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Programas.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Principal.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Login.java</file>
+        </group>
     </open-files>
 </project-private>
