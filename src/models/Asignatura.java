@@ -14,6 +14,10 @@ public class Asignatura {
     private String descripcion;
     private int creditos;
     private boolean estado;
+    
+    public Asignatura() {
+        
+    }
 
     public Asignatura(int id, String descripcion, int creditos, boolean estado) {
         this.id = id;

@@ -71,7 +71,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemAsignaturas) {
+            Asignaturas viewAsignaturas = new Asignaturas();
+            AsignaturaController controllerAsignatura = new AsignaturaController(viewAsignaturas);
             this.viewPrincipal.desktopPane.add(viewAsignaturas);
+            viewAsignaturas.toFront();
+            viewAsignaturas.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemTiposDocumentos) {

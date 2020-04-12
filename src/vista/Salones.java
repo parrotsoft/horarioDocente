@@ -31,7 +31,7 @@ public class Salones extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblData = new javax.swing.JTable();
         btnNuevo = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -69,7 +69,7 @@ public class Salones extends javax.swing.JInternalFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -80,7 +80,7 @@ public class Salones extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblData);
 
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
@@ -141,7 +141,7 @@ public class Salones extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JTable tblData;
     // End of variables declaration//GEN-END:variables
 }
