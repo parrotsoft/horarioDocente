@@ -13,6 +13,10 @@ public class Profesion {
     private int id;
     private String descripcion;
     private boolean estado;
+    
+    public Profesion() {
+        
+    }
 
     public Profesion(int id, String descripcion, boolean estado) {
         this.id = id;

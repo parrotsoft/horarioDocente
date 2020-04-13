@@ -103,7 +103,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemProfesiones) {
+            Profesiones viewProfesiones = new Profesiones();
+            ProfesionController controllerProfesion = new ProfesionController(viewProfesiones);
             this.viewPrincipal.desktopPane.add(viewProfesiones);
+            viewProfesiones.toFront();
+            viewProfesiones.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemRoles) {
