@@ -123,7 +123,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDocentes) {
+            Docentes viewDocentes = new Docentes();
+            DocenteController controllerDocente = new DocenteController(viewDocentes);
             this.viewPrincipal.desktopPane.add(viewDocentes);
+            viewDocentes.toFront();
+            viewDocentes.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDisponibilidad) {

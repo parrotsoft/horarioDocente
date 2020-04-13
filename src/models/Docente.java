@@ -22,6 +22,10 @@ public class Docente {
     private Date fechaNacimiento;
     private String correo;
     private boolean estado;
+    
+    public Docente() {
+        
+    }
 
     public Docente(int id, int identificacion, int usuarioId, int tipoDocumento, int profesionId, String nombres, String apellidos, Date fechaNacimiento, String correo, boolean estado) {
         this.id = id;
