@@ -95,7 +95,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDias) {
+            Dias viewDias = new Dias();
+            DiaController controllerDia = new DiaController(viewDias);
             this.viewPrincipal.desktopPane.add(viewDias);
+            viewDias.toFront();
+            viewDias.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemProfesiones) {

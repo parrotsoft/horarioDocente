@@ -13,6 +13,10 @@ public class Dia {
     private int id;
     private String descripcion;
     private boolean estado;
+    
+    public Dia() {
+        
+    }
 
     public Dia(int id, String descripcion, boolean estado) {
         this.id = id;
