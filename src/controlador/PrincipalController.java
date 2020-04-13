@@ -111,7 +111,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemRoles) {
+            Roles viewRoles = new Roles();
+            RolController controllerRole = new RolController(viewRoles);
             this.viewPrincipal.desktopPane.add(viewRoles);
+            viewRoles.toFront();
+            viewRoles.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemMiPerfil) {

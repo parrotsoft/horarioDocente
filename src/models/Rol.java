@@ -13,6 +13,10 @@ public class Rol {
     private int id;
     private String descripcion;
     private boolean estado;
+    
+    public Rol() {
+        
+    }
 
     public Rol(int id, String descripcion, boolean estado) {
         this.id = id;
