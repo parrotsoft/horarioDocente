@@ -87,7 +87,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemSalones) {
-            this.viewPrincipal.desktopPane.add(viewSalones);
+            Salones viewSalon = new Salones();
+            SalonController controllerSalon = new SalonController(viewSalon);
+            this.viewPrincipal.desktopPane.add(viewSalon);
+            viewSalon.toFront();
+            viewSalon.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDias) {
