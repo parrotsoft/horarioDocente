@@ -14,6 +14,10 @@ public class TipoDocumento {
     private String descripcion;
     private boolean estado;
 
+    public TipoDocumento() {
+        
+    }
+    
     public TipoDocumento(int id, String descripcion, boolean estado) {
         this.id = id;
         this.descripcion = descripcion;

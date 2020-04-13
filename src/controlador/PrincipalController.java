@@ -79,7 +79,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemTiposDocumentos) {
+            TipoDocumentos viewTipoDocumentos = new TipoDocumentos();
+            TipoDocumentosController controller = new TipoDocumentosController(viewTipoDocumentos);
             this.viewPrincipal.desktopPane.add(viewTipoDocumentos);
+            viewTipoDocumentos.toFront();
+            viewTipoDocumentos.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemSalones) {

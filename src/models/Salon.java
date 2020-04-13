@@ -13,6 +13,10 @@ public class Salon {
     private int id;
     private String descripcion;
     private boolean estado;
+    
+    public Salon() {
+        
+    }
 
     public Salon(int id, String descripcion, boolean estado) {
         this.id = id;
