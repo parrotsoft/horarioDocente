@@ -33,7 +33,7 @@ public class DocenteDaoImpl implements IDocenteDao {
         Connection con = null;
         try {
             con = Conexion.conectart();
-            String query = "{call guardar_docente(?,?,?,?,?,?,?,?,?)}";
+            String query = "{call guardar_docente(?,?,?,?,?,?,?,?)}";
             PreparedStatement stmt = con.prepareCall(query);
             
             stmt.setInt(1, data.getIdentificacion());
@@ -42,9 +42,8 @@ public class DocenteDaoImpl implements IDocenteDao {
             stmt.setInt(4, data.getProfesionId());
             stmt.setString(5, data.getNombres());
             stmt.setString(6, data.getApellidos());
-            stmt.setDate(7, data.getFechaNacimiento());
+            stmt.setString(7, data.getFechaNacimiento());
             stmt.setString(8, data.getCorreo());
-            stmt.setBoolean(9, data.isEstado());
             stmt.execute();
             guardar = true;
             con.close();
@@ -79,7 +78,7 @@ public class DocenteDaoImpl implements IDocenteDao {
                 docente.setProfesionId(rs.getInt(5));
                 docente.setNombres(rs.getString(6));
                 docente.setApellidos(rs.getString(7));
-                docente.setFechaNacimiento(rs.getDate(8));
+                docente.setFechaNacimiento(rs.getString(8));
                 docente.setCorreo(rs.getString(9));
                 docente.setEstado(rs.getBoolean(10));
                 listaData.add(docente);
@@ -114,7 +113,7 @@ public class DocenteDaoImpl implements IDocenteDao {
             stmt.setInt(5, data.getProfesionId());
             stmt.setString(6, data.getNombres());
             stmt.setString(7, data.getApellidos());
-            stmt.setDate(8, data.getFechaNacimiento());
+            stmt.setString(8, data.getFechaNacimiento());
             stmt.setString(9, data.getCorreo());
             stmt.setBoolean(10, data.isEstado());
             

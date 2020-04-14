@@ -19,7 +19,7 @@ public class Docente {
     private int profesionId;
     private String nombres;
     private String apellidos;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String correo;
     private boolean estado;
     
@@ -27,7 +27,7 @@ public class Docente {
         
     }
 
-    public Docente(int id, int identificacion, int usuarioId, int tipoDocumento, int profesionId, String nombres, String apellidos, Date fechaNacimiento, String correo, boolean estado) {
+    public Docente(int id, int identificacion, int usuarioId, int tipoDocumento, int profesionId, String nombres, String apellidos, String fechaNacimiento, String correo, boolean estado) {
         this.id = id;
         this.identificacion = identificacion;
         this.usuarioId = usuarioId;
@@ -96,11 +96,11 @@ public class Docente {
         this.apellidos = apellidos;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

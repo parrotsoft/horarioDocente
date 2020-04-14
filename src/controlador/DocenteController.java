@@ -83,25 +83,45 @@ public class DocenteController implements ActionListener {
         }
         
         if (e.getSource() == this.viewDocentes.btnGuardar) {
-            /*if (this.viewDia.txtDescripcion.getText().length() > 0) {
-                if (diaEdit.getId() != 0) {
-                    diaEdit.setDescripcion(this.viewDia.txtDescripcion.getText());
-                    if (this.daoDia.update(diaEdit)) {
-                        JOptionPane.showMessageDialog(null, "Registro actualizado de forma correcta!");
-                        diaEdit = new Dia();
-                        this.setTable();
-                        this.btnEnable(true);
-                    }
-                } else {
-                    Dia dia = new Dia();
-                    dia.setDescripcion(this.viewDia.txtDescripcion.getText());
-                    if (this.daoDia.save(dia)) {
+            
+            if (this.validateField()) {
+                TipoDocumento tipoDocumento = this.tipoDocumentos.get(this.viewDocentes.txtTipoDocumento.getSelectedIndex());
+                Profesion profesion = this.profesiones.get(this.viewDocentes.txtProfesiones.getSelectedIndex());
+                
+                if (docenteEdit.getId() != 0) {
+                    docenteEdit.setIdentificacion(Integer.parseInt(this.viewDocentes.txtNumeroIdentificacion.getText()));
+                    docenteEdit.setUsuarioId(1);
+                    docenteEdit.setTipoDocumento(tipoDocumento.getId());
+                    docenteEdit.setProfesionId(profesion.getId());
+                    docenteEdit.setNombres(this.viewDocentes.txtNombres.getText());
+                    docenteEdit.setApellidos(this.viewDocentes.txtApellidos.getText());
+                    docenteEdit.setFechaNacimiento(this.viewDocentes.txtFechaNacimiento.getText());
+                    docenteEdit.setCorreo(this.viewDocentes.txtCorreo.getText());
+                    if (this.daoDocente.update(docenteEdit)) {
                         JOptionPane.showMessageDialog(null, "Registro almacenado de forma correcta!");
                         this.setTable();
                         this.btnEnable(true);
                     }
-                } 
-            } */
+                } else {
+                    Docente docente = new Docente();
+                    docente.setIdentificacion(Integer.parseInt(this.viewDocentes.txtNumeroIdentificacion.getText()));
+                    docente.setUsuarioId(1);
+                    docente.setTipoDocumento(tipoDocumento.getId());
+                    docente.setProfesionId(profesion.getId());
+                    docente.setNombres(this.viewDocentes.txtNombres.getText());
+                    docente.setApellidos(this.viewDocentes.txtApellidos.getText());
+                    docente.setFechaNacimiento(this.viewDocentes.txtFechaNacimiento.getText());
+                    docente.setCorreo(this.viewDocentes.txtCorreo.getText());
+                    if (this.daoDocente.save(docente)) {
+                        JOptionPane.showMessageDialog(null, "Registro almacenado de forma correcta!");
+                        this.setTable();
+                        this.btnEnable(true);
+                    }
+                }
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Por favor verificar los todos los campos son requeridos...s");
+            }
         }
     }
     
@@ -174,6 +194,20 @@ public class DocenteController implements ActionListener {
         this.viewDocentes.txtFechaNacimiento.setEnabled(!enabled);
         this.viewDocentes.txtCorreo.setEnabled(!enabled);
         
+    }
+    
+    private boolean validateField() {
+        if ((this.viewDocentes.txtTipoDocumento.getSelectedIndex() != -1) && 
+            (this.viewDocentes.txtNumeroIdentificacion.getText().length() > 0) &&
+            (this.viewDocentes.txtProfesiones.getSelectedIndex() != -1) &&
+            (this.viewDocentes.txtNombres.getText().length() > 0) &&
+            (this.viewDocentes.txtApellidos.getText().length() > 0) &&
+            (this.viewDocentes.txtFechaNacimiento.getText().length() > 0) &&
+            (this.viewDocentes.txtCorreo.getText().length() > 0)) {
+             return true;
+        } else {
+            return false;
+        }
     }
     
 }
