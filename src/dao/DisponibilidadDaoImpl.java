@@ -73,6 +73,7 @@ public class DisponibilidadDaoImpl implements IDisponibilidadDao {
                 disponibilidad.setHoraInicial(rs.getString(4));
                 disponibilidad.setHoraFinal(rs.getString(5));
                 disponibilidad.setComentario(rs.getString(6));
+                disponibilidad.setDia(rs.getString(7));
                 listaData.add(disponibilidad);
             }
             stm.close();

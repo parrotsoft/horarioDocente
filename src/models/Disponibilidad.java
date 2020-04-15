@@ -19,6 +19,7 @@ public class Disponibilidad {
     private String horaFinal;
     private String comentario;
     private boolean estado;
+    private String dia;
     
     public Disponibilidad() {
         
@@ -88,6 +89,14 @@ public class Disponibilidad {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
     }
     
     

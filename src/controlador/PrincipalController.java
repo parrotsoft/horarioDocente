@@ -11,7 +11,7 @@ import vista.Principal;
 import javax.swing.JOptionPane;
 import vista.Asignaturas;
 import vista.Dias;
-import vista.Disponibilidad;
+import vista.Disponibilidades;
 import vista.Docentes;
 import vista.Horarios;
 import vista.MiPerfil;
@@ -36,7 +36,7 @@ public class PrincipalController implements ActionListener {
     Roles viewRoles = new Roles();
     MiPerfil viewMiPerfil = new MiPerfil();
     Docentes viewDocentes = new Docentes();
-    Disponibilidad viewDisponibilidad = new Disponibilidad();
+    Disponibilidades viewDisponibilidad = new Disponibilidades();
     Usuarios viewUsuarios = new Usuarios();
     Horarios viewHorarios = new Horarios();
     
@@ -131,7 +131,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDisponibilidad) {
+            Disponibilidades viewDisponibilidad = new Disponibilidades();
+            DisponibilidadController controllerDisponibilidad = new DisponibilidadController(viewDisponibilidad);
             this.viewPrincipal.desktopPane.add(viewDisponibilidad);
+            viewDisponibilidad.toFront();
+            viewDisponibilidad.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemUsuarios) {
