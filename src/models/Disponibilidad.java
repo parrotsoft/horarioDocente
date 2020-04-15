@@ -15,12 +15,16 @@ public class Disponibilidad {
     private int id;
     private int diaId;
     private int docenteId;
-    private Time horaInicial;
-    private Time horaFinal;
+    private String horaInicial;
+    private String horaFinal;
     private String comentario;
     private boolean estado;
+    
+    public Disponibilidad() {
+        
+    }
 
-    public Disponibilidad(int id, int diaId, int docenteId, Time horaInicial, Time horaFinal, String comentario, boolean estado) {
+    public Disponibilidad(int id, int diaId, int docenteId, String horaInicial, String horaFinal, String comentario, boolean estado) {
         this.id = id;
         this.diaId = diaId;
         this.docenteId = docenteId;
@@ -54,19 +58,19 @@ public class Disponibilidad {
         this.docenteId = docenteId;
     }
 
-    public Time getHoraInicial() {
+    public String getHoraInicial() {
         return horaInicial;
     }
 
-    public void setHoraInicial(Time horaInicial) {
+    public void setHoraInicial(String horaInicial) {
         this.horaInicial = horaInicial;
     }
 
-    public Time getHoraFinal() {
+    public String getHoraFinal() {
         return horaFinal;
     }
 
-    public void setHoraFinal(Time horaFinal) {
+    public void setHoraFinal(String horaFinal) {
         this.horaFinal = horaFinal;
     }
 

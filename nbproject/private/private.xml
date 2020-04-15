@@ -6,6 +6,7 @@
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DiaController.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Docentes.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/dao/DocenteDaoImpl.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/models/Docente.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DocenteController.java</file>
         </group>
         <group>
@@ -13,6 +14,7 @@
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Docentes.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/dao/DocenteDaoImpl.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/models/Docente.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Disponibilidad.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DocenteController.java</file>
         </group>
     </open-files>
