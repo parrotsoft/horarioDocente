@@ -33,8 +33,9 @@ public class LoginController implements ActionListener {
             Usuario usuario = new Usuario();
             usuario.setUsuario(this.viewLogin.txtUsuario.getText());
             usuario.setClave(this.viewLogin.txtClave.getText());
-            if (this.usuarioDaoImpl.login(usuario)) {
-                PrincipalController principalController = new PrincipalController(this.viewPrincipal);
+            int login = this.usuarioDaoImpl.login(usuario);
+            if ( login != 0) {
+                PrincipalController principalController = new PrincipalController(this.viewPrincipal, login);
                 this.viewPrincipal.setVisible(true);
                 this.viewLogin.dispose();  
             } else {

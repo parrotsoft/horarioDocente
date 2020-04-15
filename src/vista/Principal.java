@@ -35,6 +35,7 @@ public class Principal extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         Contenedor = new javax.swing.JInternalFrame();
+        txtUsuario = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ItemSalir = new javax.swing.JMenuItem();
@@ -75,6 +76,12 @@ public class Principal extends javax.swing.JFrame {
 
         desktopPane.add(Contenedor);
         Contenedor.setBounds(180, 30, 310, 200);
+
+        txtUsuario.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        txtUsuario.setText("jLabel1");
+        desktopPane.add(txtUsuario);
+        txtUsuario.setBounds(10, 10, 420, 30);
 
         jMenu1.setText("Archivo");
 
@@ -226,6 +233,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar menuBar;
+    public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 }

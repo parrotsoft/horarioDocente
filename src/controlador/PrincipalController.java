@@ -5,10 +5,12 @@
  */
 package controlador;
 
+import dao.UsuarioDaoImpl;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.Principal;
 import javax.swing.JOptionPane;
+import models.Usuario;
 import vista.Asignaturas;
 import vista.Dias;
 import vista.Disponibilidades;
@@ -40,8 +42,11 @@ public class PrincipalController implements ActionListener {
     Usuarios viewUsuarios = new Usuarios();
     Horarios viewHorarios = new Horarios();
     
+    UsuarioDaoImpl daoUsuario = new UsuarioDaoImpl();
+    Usuario user;
     
-    public PrincipalController(Principal viewPrincipal) {
+    
+    public PrincipalController(Principal viewPrincipal, int userId) {
         this.viewPrincipal = viewPrincipal;
         this.viewPrincipal.ItemSalir.addActionListener(this);
         this.viewPrincipal.ItemProgramas.addActionListener(this);
@@ -56,6 +61,9 @@ public class PrincipalController implements ActionListener {
         this.viewPrincipal.ItemDisponibilidad.addActionListener(this);
         this.viewPrincipal.ItemUsuarios.addActionListener(this);
         this.viewPrincipal.ItemHorarios.addActionListener(this);
+        
+        this.getUsuario(userId);
+        this.viewPrincipal.txtUsuario.setText("Bienvenido " + user.getNombres() + " " +user.getApellidos());
     }
     
     public void actionPerformed(ActionEvent e) {
@@ -145,5 +153,9 @@ public class PrincipalController implements ActionListener {
         if (e.getSource() ==this.viewPrincipal.ItemHorarios) {
             this.viewPrincipal.desktopPane.add(viewHorarios);
         }
+    }
+    
+    private void getUsuario(int id) {
+        user = this.daoUsuario.getUsuario(id);
     }
 }
