@@ -147,7 +147,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemUsuarios) {
+            Usuarios viewUsuarios = new Usuarios();
+            UsuarioController controllerUsuario = new UsuarioController(viewUsuarios);
             this.viewPrincipal.desktopPane.add(viewUsuarios);
+            viewUsuarios.toFront();
+            viewUsuarios.setVisible(true);
         }
         
         if (e.getSource() ==this.viewPrincipal.ItemHorarios) {
