@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -146,9 +147,9 @@ public class DocenteController implements ActionListener {
         DefaultTableModel model = (DefaultTableModel) this.viewDocentes.tblData.getModel();
         Object[] fila = new Object[7];
         for (int i = 0; i < lista.size(); i++) {
-            fila[0] = lista.get(i).getTipoDocumento();
+            fila[0] = lista.get(i).getTipoDocumentoText();
             fila[1] = lista.get(i).getIdentificacion();
-            fila[2] = lista.get(i).getProfesionId();
+            fila[2] = lista.get(i).getProfesionText();
             fila[3] = lista.get(i).getNombres();
             fila[4] = lista.get(i).getApellidos();
             fila[5] = lista.get(i).getFechaNacimiento();
@@ -165,7 +166,13 @@ public class DocenteController implements ActionListener {
                     int linea = table.getSelectedRow();
                     docenteEdit = lista.get(linea);
                     btnEnable(false);
-                    // viewDocentes.txtDescripcion.setText(docenteEdit.getDescripcion());
+                    viewDocentes.txtNombres.setText(docenteEdit.getNombres());
+                    viewDocentes.txtApellidos.setText(docenteEdit.getApellidos());
+                    viewDocentes.txtCorreo.setText(docenteEdit.getCorreo());
+                    viewDocentes.txtFechaNacimiento.setText(docenteEdit.getFechaNacimiento());
+                    viewDocentes.txtNumeroIdentificacion.setText(""+docenteEdit.getIdentificacion());
+                    viewDocentes.txtTipoDocumento.setSelectedIndex(getPositionTipoDocumento(docenteEdit.getTipoDocumento()));
+                    viewDocentes.txtProfesiones.setSelectedIndex(getPositionProfesion(docenteEdit.getProfesionId()));
                     viewDocentes.btnEliminar.setEnabled(true);
                 }
             }
@@ -208,6 +215,27 @@ public class DocenteController implements ActionListener {
         } else {
             return false;
         }
+    }
+    
+    
+    private int getPositionTipoDocumento(int id) {
+        int index = -1;
+        for (int i = 0; i < tipoDocumentos.size(); i++) {
+            if (tipoDocumentos.get(i).getId() == id) {
+                index = i;
+            }
+        }
+        return index;
+    }
+    
+    private int getPositionProfesion(int id) {
+        int index = -1;
+        for (int i = 0; i < profesiones.size(); i++) {
+            if (profesiones.get(i).getId() == id) {
+                index = i;
+            }
+        }
+        return index;
     }
     
 }

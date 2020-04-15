@@ -80,7 +80,8 @@ public class DocenteDaoImpl implements IDocenteDao {
                 docente.setApellidos(rs.getString(7));
                 docente.setFechaNacimiento(rs.getString(8));
                 docente.setCorreo(rs.getString(9));
-                docente.setEstado(rs.getBoolean(10));
+                docente.setTipoDocumentoText(rs.getString(10));
+                docente.setProfesionText(rs.getString(11));
                 listaData.add(docente);
             }
             stm.close();
@@ -103,7 +104,7 @@ public class DocenteDaoImpl implements IDocenteDao {
         Connection con = null;
         try {
             con = Conexion.conectart();
-            String query = "{call actualizar_docente(?,?,?,?,?,?,?,?,?,?)}";
+            String query = "{call actualizar_docente(?,?,?,?,?,?,?,?,?)}";
             PreparedStatement stmt = con.prepareCall(query);
             
             stmt.setInt(1,data.getId());
@@ -115,7 +116,6 @@ public class DocenteDaoImpl implements IDocenteDao {
             stmt.setString(7, data.getApellidos());
             stmt.setString(8, data.getFechaNacimiento());
             stmt.setString(9, data.getCorreo());
-            stmt.setBoolean(10, data.isEstado());
             
             stmt.execute();
             actualizar = true;

@@ -22,6 +22,8 @@ public class Docente {
     private String fechaNacimiento;
     private String correo;
     private boolean estado;
+    private String tipoDocumentoText;
+    private String profesionText;
     
     public Docente() {
         
@@ -118,6 +120,22 @@ public class Docente {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public String getTipoDocumentoText() {
+        return tipoDocumentoText;
+    }
+
+    public void setTipoDocumentoText(String tipoDocumentoText) {
+        this.tipoDocumentoText = tipoDocumentoText;
+    }
+
+    public String getProfesionText() {
+        return profesionText;
+    }
+
+    public void setProfesionText(String profesionText) {
+        this.profesionText = profesionText;
     }
     
     
