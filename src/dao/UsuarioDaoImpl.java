@@ -63,7 +63,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         try {
             con = Conexion.conectart();
             stm = (Statement) con.createStatement();
-            rs = stm.executeQuery("call listar_asignaturas");
+            rs = stm.executeQuery("call listar_usuarios");
             while (rs.next()) {
                 Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt(1));
@@ -189,6 +189,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
                 user.setFecha_nacimiento(rs.getString(8));
                 user.setUsuario(rs.getString(2));
                 user.setDocenteId(rs.getInt(4));
+                user.setRolId(rs.getInt(10));
                 return user;
             }
             stm.close();

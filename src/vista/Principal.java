@@ -39,7 +39,7 @@ public class Principal extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ItemSalir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mParametrizacion = new javax.swing.JMenu();
         ItemProgramas = new javax.swing.JMenuItem();
         ItemAsignaturas = new javax.swing.JMenuItem();
         ItemTiposDocumentos = new javax.swing.JMenuItem();
@@ -47,18 +47,17 @@ public class Principal extends javax.swing.JFrame {
         ItemDias = new javax.swing.JMenuItem();
         ItemProfesiones = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        ItemRoles = new javax.swing.JMenuItem();
+        mItemRoles = new javax.swing.JMenuItem();
         ItemUsuarios = new javax.swing.JMenuItem();
         ItemMiPerfil = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        ItemDocentes = new javax.swing.JMenuItem();
+        itemAdministracion = new javax.swing.JMenu();
+        itemDocentes = new javax.swing.JMenuItem();
         ItemDisponibilidad = new javax.swing.JMenuItem();
         ItemHorarios = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        itemReportes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(65, 105, 170));
-        setPreferredSize(new java.awt.Dimension(765, 100));
 
         desktopPane.setLayout(null);
 
@@ -93,42 +92,52 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
-        jMenu2.setText("Parametrización");
+        mParametrizacion.setText("Parametrización");
 
         ItemProgramas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         ItemProgramas.setText("Programas");
-        jMenu2.add(ItemProgramas);
+        mParametrizacion.add(ItemProgramas);
 
         ItemAsignaturas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         ItemAsignaturas.setText("Asignaturas");
-        jMenu2.add(ItemAsignaturas);
+        mParametrizacion.add(ItemAsignaturas);
 
         ItemTiposDocumentos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         ItemTiposDocumentos.setText("Tipos de Documentos");
-        jMenu2.add(ItemTiposDocumentos);
+        mParametrizacion.add(ItemTiposDocumentos);
 
         ItemSalones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         ItemSalones.setText("Salones");
-        jMenu2.add(ItemSalones);
+        mParametrizacion.add(ItemSalones);
 
         ItemDias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         ItemDias.setText("Dias");
-        jMenu2.add(ItemDias);
+        mParametrizacion.add(ItemDias);
 
         ItemProfesiones.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         ItemProfesiones.setText("Profesiones");
-        jMenu2.add(ItemProfesiones);
+        mParametrizacion.add(ItemProfesiones);
 
-        menuBar.add(jMenu2);
+        menuBar.add(mParametrizacion);
 
         jMenu3.setText("Seguridad");
 
-        ItemRoles.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        ItemRoles.setText("Roles");
-        jMenu3.add(ItemRoles);
+        mItemRoles.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        mItemRoles.setText("Roles");
+        mItemRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mItemRolesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mItemRoles);
 
         ItemUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         ItemUsuarios.setText("Usuarios");
+        ItemUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemUsuariosActionPerformed(evt);
+            }
+        });
         jMenu3.add(ItemUsuarios);
 
         ItemMiPerfil.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
@@ -142,21 +151,21 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(jMenu3);
 
-        jMenu4.setText("Administración");
+        itemAdministracion.setText("Administración");
 
-        ItemDocentes.setText("Docentes");
-        jMenu4.add(ItemDocentes);
+        itemDocentes.setText("Docentes");
+        itemAdministracion.add(itemDocentes);
 
         ItemDisponibilidad.setText("Disponibilidades");
-        jMenu4.add(ItemDisponibilidad);
+        itemAdministracion.add(ItemDisponibilidad);
 
         ItemHorarios.setText("Horarios");
-        jMenu4.add(ItemHorarios);
+        itemAdministracion.add(ItemHorarios);
 
-        menuBar.add(jMenu4);
+        menuBar.add(itemAdministracion);
 
-        jMenu5.setText("Reportes");
-        menuBar.add(jMenu5);
+        itemReportes.setText("Reportes");
+        menuBar.add(itemReportes);
 
         setJMenuBar(menuBar);
 
@@ -177,6 +186,14 @@ public class Principal extends javax.swing.JFrame {
     private void ItemMiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemMiPerfilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ItemMiPerfilActionPerformed
+
+    private void mItemRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mItemRolesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mItemRolesActionPerformed
+
+    private void ItemUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ItemUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,22 +235,22 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem ItemAsignaturas;
     public javax.swing.JMenuItem ItemDias;
     public javax.swing.JMenuItem ItemDisponibilidad;
-    public javax.swing.JMenuItem ItemDocentes;
     public javax.swing.JMenuItem ItemHorarios;
     public javax.swing.JMenuItem ItemMiPerfil;
     public javax.swing.JMenuItem ItemProfesiones;
     public javax.swing.JMenuItem ItemProgramas;
-    public javax.swing.JMenuItem ItemRoles;
     public javax.swing.JMenuItem ItemSalir;
     public javax.swing.JMenuItem ItemSalones;
     public javax.swing.JMenuItem ItemTiposDocumentos;
     public javax.swing.JMenuItem ItemUsuarios;
     public javax.swing.JDesktopPane desktopPane;
+    public javax.swing.JMenu itemAdministracion;
+    public javax.swing.JMenuItem itemDocentes;
+    public javax.swing.JMenu itemReportes;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
+    public javax.swing.JMenuItem mItemRoles;
+    public javax.swing.JMenu mParametrizacion;
     private javax.swing.JMenuBar menuBar;
     public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables

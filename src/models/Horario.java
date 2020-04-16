@@ -21,11 +21,16 @@ public class Horario {
     private int docenteId;
     private int anno;
     private int semestre;
-    private Time horaInicial;
-    private Time horaFinal;
+    private String horaInicial;
+    private String horaFinal;
     private boolean estado;
+    private int disponibilidadId;
+    
+    public Horario() {
+        
+    }
 
-    public Horario(int id, int usuarioId, int diaId, int salonId, int programaId, int asignaturaId, int docenteId, int anno, int semestre, Time horaInicial, Time horaFinal, boolean estado) {
+    public Horario(int id, int usuarioId, int diaId, int salonId, int programaId, int asignaturaId, int docenteId, int anno, int semestre, String horaInicial, String horaFinal, boolean estado) {
         this.id = id;
         this.usuarioId = usuarioId;
         this.diaId = diaId;
@@ -112,19 +117,19 @@ public class Horario {
         this.semestre = semestre;
     }
 
-    public Time getHoraInicial() {
+    public String getHoraInicial() {
         return horaInicial;
     }
 
-    public void setHoraInicial(Time horaInicial) {
+    public void setHoraInicial(String horaInicial) {
         this.horaInicial = horaInicial;
     }
 
-    public Time getHoraFinal() {
+    public String getHoraFinal() {
         return horaFinal;
     }
 
-    public void setHoraFinal(Time horaFinal) {
+    public void setHoraFinal(String horaFinal) {
         this.horaFinal = horaFinal;
     }
 
@@ -134,6 +139,14 @@ public class Horario {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public int getDisponibilidadId() {
+        return disponibilidadId;
+    }
+
+    public void setDisponibilidadId(int disponibilidadId) {
+        this.disponibilidadId = disponibilidadId;
     }
     
     

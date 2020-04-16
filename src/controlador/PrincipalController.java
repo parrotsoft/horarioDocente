@@ -55,9 +55,9 @@ public class PrincipalController implements ActionListener {
         this.viewPrincipal.ItemSalones.addActionListener(this);
         this.viewPrincipal.ItemDias.addActionListener(this);
         this.viewPrincipal.ItemProfesiones.addActionListener(this);
-        this.viewPrincipal.ItemRoles.addActionListener(this);
+        this.viewPrincipal.mItemRoles.addActionListener(this);
         this.viewPrincipal.ItemMiPerfil.addActionListener(this);
-        this.viewPrincipal.ItemDocentes.addActionListener(this);
+        this.viewPrincipal.itemDocentes.addActionListener(this);
         this.viewPrincipal.ItemDisponibilidad.addActionListener(this);
         this.viewPrincipal.ItemUsuarios.addActionListener(this);
         this.viewPrincipal.ItemHorarios.addActionListener(this);
@@ -118,7 +118,7 @@ public class PrincipalController implements ActionListener {
             viewProfesiones.setVisible(true);
         }
         
-        if (e.getSource() == this.viewPrincipal.ItemRoles) {
+        if (e.getSource() == this.viewPrincipal.mItemRoles) {
             Roles viewRoles = new Roles();
             RolController controllerRole = new RolController(viewRoles);
             this.viewPrincipal.desktopPane.add(viewRoles);
@@ -134,7 +134,7 @@ public class PrincipalController implements ActionListener {
             viewMiPerfil.setVisible(true);
         }
         
-        if (e.getSource() == this.viewPrincipal.ItemDocentes) {
+        if (e.getSource() == this.viewPrincipal.itemDocentes) {
             Docentes viewDocentes = new Docentes();
             DocenteController controllerDocente = new DocenteController(viewDocentes);
             this.viewPrincipal.desktopPane.add(viewDocentes);
@@ -159,11 +159,28 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() ==this.viewPrincipal.ItemHorarios) {
+            Horarios viewHorarios = new  Horarios();
+            HorarioController controllerHorario = new HorarioController(viewHorarios);
             this.viewPrincipal.desktopPane.add(viewHorarios);
+            viewHorarios.toFront();
+            viewHorarios.setVisible(true);
         }
     }
     
     private void getUsuario(int id) {
         user = this.daoUsuario.getUsuario(id);
+        this.manageMenu();
+    }
+    
+    private void manageMenu() {
+        // Si es distinto de Admin
+        if (user.getRolId() != 1) {
+            this.viewPrincipal.mParametrizacion.setVisible(false);
+            this.viewPrincipal.mItemRoles.setVisible(false);
+            this.viewPrincipal.ItemUsuarios.setVisible(false);
+            this.viewPrincipal.itemDocentes.setVisible(false);
+            this.viewPrincipal.ItemHorarios.setVisible(false);
+            this.viewPrincipal.itemReportes.setVisible(false);
+        }
     }
 }
