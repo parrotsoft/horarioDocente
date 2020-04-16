@@ -7,15 +7,14 @@
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Docentes.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/dao/DocenteDaoImpl.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/models/Docente.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Disponibilidad.java</file>
             <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DocenteController.java</file>
         </group>
         <group>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DiaController.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Docentes.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/dao/DocenteDaoImpl.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/models/Docente.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Disponibilidad.java</file>
-            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/DocenteController.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/vista/Horarios.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/models/Horario.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/controlador/HorarioController.java</file>
+            <file>file:/Users/miguel/Desktop/Developer/horarioDocente/src/dao/HorarioDaoImpl.java</file>
         </group>
     </open-files>
 </project-private>
