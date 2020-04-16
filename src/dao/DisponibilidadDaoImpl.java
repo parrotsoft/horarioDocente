@@ -88,6 +88,45 @@ public class DisponibilidadDaoImpl implements IDisponibilidadDao {
         }
         return listaData;
     }
+    
+    public List<Disponibilidad> listForDocente(int id) {
+        Statement stm = null;
+        Connection con = null;
+        ResultSet rs = null;
+        
+        List<Disponibilidad> listaData = new ArrayList<Disponibilidad>();
+        
+        try {
+            con = Conexion.conectart();
+            stm = (Statement) con.createStatement();
+            String query = "{call list_por_docente(?)}";
+            PreparedStatement stmt = con.prepareCall(query);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Disponibilidad disponibilidad = new Disponibilidad();
+                disponibilidad.setId(rs.getInt(1));
+                disponibilidad.setDiaId(rs.getInt(2));
+                disponibilidad.setDocenteId(rs.getInt(3));
+                disponibilidad.setHoraInicial(rs.getString(4));
+                disponibilidad.setHoraFinal(rs.getString(5));
+                disponibilidad.setComentario(rs.getString(6));
+                disponibilidad.setDia(rs.getString(7));
+                listaData.add(disponibilidad);
+            }
+            stm.close();
+            rs.close();
+            con.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            e.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+            Logger.getLogger(ProgramaDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaData;
+    }
 
     @Override
     public boolean update(Disponibilidad data) {

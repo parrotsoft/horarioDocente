@@ -14,6 +14,7 @@ public class Usuario {
     private String usuario;
     private String clave;
     private int rolId;
+    private int docenteId;
     private boolean estado;
     private String nombres;
     private String apellidos;
@@ -111,6 +112,14 @@ public class Usuario {
 
     public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
+    }
+
+    public int getDocenteId() {
+        return docenteId;
+    }
+
+    public void setDocenteId(int docenteId) {
+        this.docenteId = docenteId;
     }
     
     

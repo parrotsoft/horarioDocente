@@ -43,7 +43,7 @@ public class PrincipalController implements ActionListener {
     Horarios viewHorarios = new Horarios();
     
     UsuarioDaoImpl daoUsuario = new UsuarioDaoImpl();
-    Usuario user;
+    public static Usuario user;
     
     
     public PrincipalController(Principal viewPrincipal, int userId) {
@@ -127,7 +127,11 @@ public class PrincipalController implements ActionListener {
         }
         
         if (e.getSource() == this.viewPrincipal.ItemMiPerfil) {
+            MiPerfil viewMiPerfil = new MiPerfil();
+            MiPerfilController controllerMiPerfil = new MiPerfilController(viewMiPerfil);
             this.viewPrincipal.desktopPane.add(viewMiPerfil);
+            viewMiPerfil.toFront();
+            viewMiPerfil.setVisible(true);
         }
         
         if (e.getSource() == this.viewPrincipal.ItemDocentes) {

@@ -82,7 +82,7 @@ public class DisponibilidadController implements ActionListener {
                 if (disponibilidadEdit.getId() != 0) {
                     
                     disponibilidadEdit.setDiaId(dia.getId());
-                    disponibilidadEdit.setDocenteId(1); 
+                    disponibilidadEdit.setDocenteId(PrincipalController.user.getDocenteId()); 
                     disponibilidadEdit.setHoraInicial(this.viewDisponibilidad.txtHoraInicial.getText());
                     disponibilidadEdit.setHoraFinal(this.viewDisponibilidad.txtHoraFinal.getText());
                     disponibilidadEdit.setComentario(this.viewDisponibilidad.txtComentario.getText());
@@ -95,7 +95,7 @@ public class DisponibilidadController implements ActionListener {
                 } else {
                     Disponibilidad disponibilidad = new Disponibilidad();
                     disponibilidad.setDiaId(dia.getId());
-                    disponibilidad.setDocenteId(1); 
+                    disponibilidad.setDocenteId(PrincipalController.user.getDocenteId()); 
                     disponibilidad.setHoraInicial(this.viewDisponibilidad.txtHoraInicial.getText());
                     disponibilidad.setHoraFinal(this.viewDisponibilidad.txtHoraFinal.getText());
                     disponibilidad.setComentario(this.viewDisponibilidad.txtComentario.getText());
@@ -116,7 +116,7 @@ public class DisponibilidadController implements ActionListener {
     private void setTable() {
         String[] cols = { "Dia", "Hora Inicial", "Hora Final" };
         this.viewDisponibilidad.tblData.setModel(new DefaultTableModel(null, cols));
-        List<Disponibilidad> lista = this.daoDisponibilidad.list();
+        List<Disponibilidad> lista = this.daoDisponibilidad.listForDocente(PrincipalController.user.getDocenteId());
         DefaultTableModel model = (DefaultTableModel) this.viewDisponibilidad.tblData.getModel();
         Object[] fila = new Object[3];
         for (int i = 0; i < lista.size(); i++) {
