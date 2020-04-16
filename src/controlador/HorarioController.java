@@ -83,7 +83,7 @@ public class HorarioController implements ActionListener {
         this.viewHorarios.btnEliminar.addActionListener(this);
         this.viewHorarios.btnGuardar.addActionListener(this);
         
-        // this.setTable();
+        this.setTable();
         this.btnEnable(true);
         
         this.viewHorarios.txtProfesor.addActionListener (new ActionListener () {
@@ -178,13 +178,13 @@ public class HorarioController implements ActionListener {
         DefaultTableModel model = (DefaultTableModel) this.viewHorarios.tblData.getModel();
         Object[] fila = new Object[7];
         for (int i = 0; i < lista.size(); i++) {
-            fila[0] = lista.get(i).getDocenteId();
-            fila[1] = lista.get(i).getProgramaId();
-            fila[2] = lista.get(i).getAsignaturaId();
-            fila[3] = lista.get(i).getSalonId();
+            fila[0] = lista.get(i).getNombre() + " " + lista.get(i).getApellido();
+            fila[1] = lista.get(i).getPrograma();
+            fila[2] = lista.get(i).getAsignatura();
+            fila[3] = lista.get(i).getSalon();
             fila[4] = lista.get(i).getHoraInicial();
             fila[5] = lista.get(i).getHoraFinal();
-            fila[6] = lista.get(i).getDiaId();
+            fila[6] = lista.get(i).getDia();
             model.addRow(fila);
         }
        
@@ -198,6 +198,9 @@ public class HorarioController implements ActionListener {
                     horarioEdit = lista.get(linea);
                     btnEnable(false);
                     
+                    disponibilidades = daoDisponibilidad.listForDocente(horarioEdit.getDocenteId());
+                    setComboBoxDisponibilidades();
+                
                     viewHorarios.txtProfesor.setSelectedIndex(getPositionDocente(horarioEdit.getDocenteId()));
                     viewHorarios.txtPrograma.setSelectedIndex(getPositionPrograma(horarioEdit.getProgramaId()));
                     viewHorarios.txtAsignatura.setSelectedIndex(getPositionAsignatura(horarioEdit.getAsignaturaId()));

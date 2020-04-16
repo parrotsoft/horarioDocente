@@ -25,6 +25,12 @@ public class Horario {
     private String horaFinal;
     private boolean estado;
     private int disponibilidadId;
+    private String programa;
+    private String asignatura;
+    private String salon;
+    private String dia;
+    private String nombre;
+    private String apellido;
     
     public Horario() {
         
@@ -148,6 +154,55 @@ public class Horario {
     public void setDisponibilidadId(int disponibilidadId) {
         this.disponibilidadId = disponibilidadId;
     }
+
+    public String getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(String programa) {
+        this.programa = programa;
+    }
+
+    public String getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(String asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public String getSalon() {
+        return salon;
+    }
+
+    public void setSalon(String salon) {
+        this.salon = salon;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    
     
     
 }
