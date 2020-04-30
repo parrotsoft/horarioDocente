@@ -62,11 +62,9 @@ public class SalonDaoImplTest {
     public void testList() {
         System.out.println("list");
         SalonDaoImpl instance = new SalonDaoImpl();
-        List<Salon> expResult = null;
         List<Salon> result = instance.list();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull(result);
+        System.out.println("List ---> OK");
     }
 
     /**
