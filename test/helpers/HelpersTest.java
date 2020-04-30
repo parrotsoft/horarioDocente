@@ -20,14 +20,18 @@ public class HelpersTest {
 
     @Test
     public void testValidarMail() {
-        boolean Iscorreo = Helpers.ValidarMail("lopezarizamiguel@gmai.com");
+        String correo = "lopezarizamiguel@gmai.com";
+        boolean Iscorreo = Helpers.ValidarMail(correo);
         assertEquals(true, Iscorreo);
+        System.out.println(correo + Iscorreo + " ---> OK");
     }
     
     @Test
     public void testValidarUser() {
-        boolean Iscorreo = Helpers.ValidarUser("adm");
-        assertEquals(false, Iscorreo);
+        String user = "admin";
+        boolean Iscorreo = Helpers.ValidarUser(user);
+        assertEquals(true, Iscorreo);
+        System.out.println(user + Iscorreo + " ---> OK");
     }
     
 }
