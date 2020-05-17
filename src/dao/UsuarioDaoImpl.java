@@ -7,6 +7,7 @@ package dao;
 
 import com.mysql.jdbc.Statement;
 import connection.Conexion;
+import helpers.Encriptacion;
 import idao.IUsuarioDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,7 +39,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             stmt.setInt(1, data.getDocenteId());
             stmt.setInt(2, data.getRolId());
             stmt.setString(3, data.getUsuario());
-            stmt.setString(4, data.getClave());
+            stmt.setString(4, Encriptacion.encriptaClave(data.getClave()));
             stmt.execute();
             guardar = true;
             con.close();
@@ -103,7 +104,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             stmt.setInt(2, data.getDocenteId());
             stmt.setInt(3, data.getRolId());
             stmt.setString(4, data.getUsuario());
-            stmt.setString(5, data.getClave());
+            stmt.setString(5, Encriptacion.encriptaClave(data.getClave()));
             stmt.execute();
             actualizar = true;
             con.close();

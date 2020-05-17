@@ -33,9 +33,17 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         desktopPane = new javax.swing.JDesktopPane();
         Contenedor = new javax.swing.JInternalFrame();
         txtUsuario = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnUsuarios = new javax.swing.JButton();
+        btnProgramas = new javax.swing.JButton();
+        btnDocentes = new javax.swing.JButton();
+        btnAsignatura = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ItemSalir = new javax.swing.JMenuItem();
@@ -54,6 +62,12 @@ public class Principal extends javax.swing.JFrame {
         itemDocentes = new javax.swing.JMenuItem();
         ItemDisponibilidad = new javax.swing.JMenuItem();
         ItemHorarios = new javax.swing.JMenuItem();
+
+        jMenu2.setText("File");
+        jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Edit");
+        jMenuBar1.add(jMenu4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(65, 105, 170));
@@ -82,6 +96,48 @@ public class Principal extends javax.swing.JFrame {
         txtUsuario.setText("jLabel1");
         desktopPane.add(txtUsuario);
         txtUsuario.setBounds(10, 10, 420, 30);
+
+        jPanel1.setBackground(new java.awt.Color(65, 105, 170));
+        jPanel1.setForeground(new java.awt.Color(65, 105, 170));
+
+        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/user.png"))); // NOI18N
+        btnUsuarios.setText("Usuarios");
+
+        btnProgramas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/education.png"))); // NOI18N
+        btnProgramas.setText("Programas");
+
+        btnDocentes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/people.png"))); // NOI18N
+        btnDocentes.setText("Docentes");
+
+        btnAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/file.png"))); // NOI18N
+        btnAsignatura.setText("Asignaturas");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnProgramas, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAsignatura, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDocentes, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnProgramas, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(btnAsignatura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDocentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
 
         jMenu1.setText("Archivo");
 
@@ -169,11 +225,15 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 765, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE))
         );
 
         pack();
@@ -239,11 +299,19 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem ItemSalones;
     public javax.swing.JMenuItem ItemTiposDocumentos;
     public javax.swing.JMenuItem ItemUsuarios;
+    public javax.swing.JButton btnAsignatura;
+    public javax.swing.JButton btnDocentes;
+    public javax.swing.JButton btnProgramas;
+    public javax.swing.JButton btnUsuarios;
     public javax.swing.JDesktopPane desktopPane;
     public javax.swing.JMenu itemAdministracion;
     public javax.swing.JMenuItem itemDocentes;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JMenuItem mItemRoles;
     public javax.swing.JMenu mParametrizacion;
     private javax.swing.JMenuBar menuBar;

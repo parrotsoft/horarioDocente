@@ -1,5 +1,5 @@
 /*
- Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
  Source Server         : Local
  Source Server Type    : MySQL
@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 16/04/2020 02:13:10
+ Date: 17/05/2020 16:32:02
 */
 
 SET NAMES utf8mb4;
@@ -33,7 +33,7 @@ CREATE TABLE `asignaturas` (
 -- Records of asignaturas
 -- ----------------------------
 BEGIN;
-INSERT INTO `asignaturas` VALUES (1, 'Matematicas Basica', 1, NULL);
+INSERT INTO `asignaturas` VALUES (1, 'Matematicas Basica', 10, NULL);
 INSERT INTO `asignaturas` VALUES (2, 'Calculo Integral', 12, NULL);
 COMMIT;
 
@@ -76,15 +76,17 @@ CREATE TABLE `disponibilidades` (
   KEY `fk_docente_disponibilidad_idx` (`docente_id`),
   CONSTRAINT `fk_dia_disponibilidad` FOREIGN KEY (`dia_id`) REFERENCES `dias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_docente_disponibilidad` FOREIGN KEY (`docente_id`) REFERENCES `docentes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='	';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='	';
 
 -- ----------------------------
 -- Records of disponibilidades
 -- ----------------------------
 BEGIN;
-INSERT INTO `disponibilidades` VALUES (8, 1, 5, '07:00', '12:20', '', NULL);
+INSERT INTO `disponibilidades` VALUES (8, 1, 5, '07:00', '12:20', 'texto', NULL);
 INSERT INTO `disponibilidades` VALUES (9, 2, 5, '07:00', '12:00', 'Pruedo trabajar de corrido', NULL);
 INSERT INTO `disponibilidades` VALUES (10, 4, 5, '07:00', '13:00', '', NULL);
+INSERT INTO `disponibilidades` VALUES (11, 5, 5, '07:00', '11:00', '', NULL);
+INSERT INTO `disponibilidades` VALUES (12, 3, 5, '07:00', '10:00', '', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -116,7 +118,7 @@ CREATE TABLE `docentes` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `docentes` VALUES (1, 1043605421, 1, 1, 4, 'Miguel Angel', 'Lopez Ariza', '9/10/0021', 'lopezarizamiguel@gmail.com', NULL);
-INSERT INTO `docentes` VALUES (5, 123456, 1, 1, 4, 'Jorge', 'Salgado', '14/06/0010', 'jorgesalgado@gmail.com', NULL);
+INSERT INTO `docentes` VALUES (5, 123456, 1, 3, 4, 'Test', 'Test', '4/04/2020', 'test@gmail.com', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -152,7 +154,7 @@ CREATE TABLE `horarios` (
   CONSTRAINT `fk_horario_salon_id` FOREIGN KEY (`salon_id`) REFERENCES `salones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_horario_usuario_id` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `horarios_disponibilidades_FK` FOREIGN KEY (`disponibilidad_id`) REFERENCES `disponibilidades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='			';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='			';
 
 -- ----------------------------
 -- Records of horarios
@@ -160,6 +162,7 @@ CREATE TABLE `horarios` (
 BEGIN;
 INSERT INTO `horarios` VALUES (1, NULL, 1, 8, 6, 1, 5, 2020, NULL, '07:00', '09:00', NULL, 8);
 INSERT INTO `horarios` VALUES (2, NULL, 2, 8, 6, 2, 5, 2020, NULL, '07:30', '11:00', NULL, 9);
+INSERT INTO `horarios` VALUES (4, NULL, 4, 10, 6, 2, 5, 2020, NULL, '07:00', '12:00', NULL, 10);
 COMMIT;
 
 -- ----------------------------
@@ -205,15 +208,14 @@ CREATE TABLE `programas` (
   `descripcion` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of programas
 -- ----------------------------
 BEGIN;
-INSERT INTO `programas` VALUES (3, 'Enfermeria Superior', 0);
-INSERT INTO `programas` VALUES (6, 'Ingenieria de Sistema y computacion', 0);
-INSERT INTO `programas` VALUES (8, 'Educacion Fisica', 0);
+INSERT INTO `programas` VALUES (6, 'Ingenieria de Sistema de computacion', 0);
+INSERT INTO `programas` VALUES (7, 'Enfermeria', 0);
 COMMIT;
 
 -- ----------------------------
@@ -225,7 +227,7 @@ CREATE TABLE `roles` (
   `descripcion` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of roles
@@ -289,14 +291,14 @@ CREATE TABLE `usuarios` (
   KEY `usuarios_docentes_FK` (`docente_id`),
   CONSTRAINT `fk_usuario_rol` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `usuarios_docentes_FK` FOREIGN KEY (`docente_id`) REFERENCES `docentes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='	';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='	';
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
 BEGIN;
-INSERT INTO `usuarios` VALUES (1, 'admin', 'admin', 1, 1);
-INSERT INTO `usuarios` VALUES (2, 'jorge', 'jorge', 2, 5);
+INSERT INTO `usuarios` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 1);
+INSERT INTO `usuarios` VALUES (2, 'jorge', 'd67326a22642a324aa1b0745f2f17abb', 2, 5);
 COMMIT;
 
 -- ----------------------------
@@ -458,7 +460,7 @@ DROP PROCEDURE IF EXISTS `actualizar_usuario`;
 delimiter ;;
 CREATE PROCEDURE `mydb`.`actualizar_usuario`(IN _id INT(11), IN _docente INT(11), IN _rol INT(11), IN _usuario VARCHAR(45), IN _clave VARCHAR(45))
 BEGIN
-	UPDATE usuarios SET docente_id = _docente, rol_id = _rol, usuarios = _usuario, clave = _clave  WHERE id = _id;
+	UPDATE usuarios SET docente_id = _docente, rol_id = _rol, usuario = _usuario, clave = _clave  WHERE id = _id;
 END
 ;;
 delimiter ;

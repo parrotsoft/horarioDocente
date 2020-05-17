@@ -62,6 +62,11 @@ public class PrincipalController implements ActionListener {
         this.viewPrincipal.ItemUsuarios.addActionListener(this);
         this.viewPrincipal.ItemHorarios.addActionListener(this);
         
+        this.viewPrincipal.btnProgramas.addActionListener(this);
+        this.viewPrincipal.btnAsignatura.addActionListener(this);
+        this.viewPrincipal.btnUsuarios.addActionListener(this);
+        this.viewPrincipal.btnDocentes.addActionListener(this);
+        
         this.getUsuario(userId);
         this.viewPrincipal.txtUsuario.setText("Bienvenido " + user.getNombres() + " " +user.getApellidos());
     }
@@ -165,6 +170,23 @@ public class PrincipalController implements ActionListener {
             viewHorarios.toFront();
             viewHorarios.setVisible(true);
         }
+        
+        if (e.getSource() == this.viewPrincipal.btnProgramas) {
+            this.viewPrincipal.ItemProgramas.doClick();
+        }
+        
+        if (e.getSource() == this.viewPrincipal.btnAsignatura) {
+            this.viewPrincipal.ItemAsignaturas.doClick();
+        }
+        
+        if (e.getSource() == this.viewPrincipal.btnUsuarios) {
+            this.viewPrincipal.ItemUsuarios.doClick();
+        }
+        
+        if (e.getSource() == this.viewPrincipal.btnDocentes) {
+            this.viewPrincipal.itemDocentes.doClick();
+        }
+        
     }
     
     private void getUsuario(int id) {
@@ -180,6 +202,10 @@ public class PrincipalController implements ActionListener {
             this.viewPrincipal.ItemUsuarios.setVisible(false);
             this.viewPrincipal.itemDocentes.setVisible(false);
             this.viewPrincipal.ItemHorarios.setVisible(false);
+            this.viewPrincipal.btnProgramas.setVisible(false);
+            this.viewPrincipal.btnAsignatura.setVisible(false);
+            this.viewPrincipal.btnUsuarios.setVisible(false);
+            this.viewPrincipal.btnDocentes.setVisible(false);
         }
     }
 }

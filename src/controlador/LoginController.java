@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.UsuarioDaoImpl;
+import helpers.Encriptacion;
 import helpers.Helpers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,7 +35,7 @@ public class LoginController implements ActionListener {
             if (Helpers.ValidarUser(this.viewLogin.txtUsuario.getText())) {
                 Usuario usuario = new Usuario();
                 usuario.setUsuario(this.viewLogin.txtUsuario.getText());
-                usuario.setClave(this.viewLogin.txtClave.getText());
+                usuario.setClave(Encriptacion.encriptaClave(this.viewLogin.txtClave.getText()));
                 int login = this.usuarioDaoImpl.login(usuario);
                 if ( login != 0) {
                     PrincipalController principalController = new PrincipalController(this.viewPrincipal, login);
