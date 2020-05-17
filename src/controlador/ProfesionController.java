@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.ProfesionDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,6 +35,7 @@ public class ProfesionController implements ActionListener {
         this.viewProfesion.btnCancelar.addActionListener(this);
         this.viewProfesion.btnEliminar.addActionListener(this);
         this.viewProfesion.btnGuardar.addActionListener(this);
+        this.viewProfesion.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -83,6 +85,14 @@ public class ProfesionController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewProfesion.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewProfesion.tblData, "profesiones");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

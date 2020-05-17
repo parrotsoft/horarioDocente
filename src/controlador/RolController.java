@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.RolDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +36,7 @@ public class RolController implements ActionListener {
         this.viewRoles.btnCancelar.addActionListener(this);
         this.viewRoles.btnEliminar.addActionListener(this);
         this.viewRoles.btnGuardar.addActionListener(this);
+        this.viewRoles.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -84,6 +86,14 @@ public class RolController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewRoles.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewRoles.tblData, "roles");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
  

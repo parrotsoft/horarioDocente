@@ -12,6 +12,7 @@ import dao.DocenteDaoImpl;
 import dao.HorarioDaoImpl;
 import dao.ProgramaDaoImpl;
 import dao.SalonDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -82,6 +83,7 @@ public class HorarioController implements ActionListener {
         this.viewHorarios.btnCancelar.addActionListener(this);
         this.viewHorarios.btnEliminar.addActionListener(this);
         this.viewHorarios.btnGuardar.addActionListener(this);
+        this.viewHorarios.btnImprimir.addActionListener(this);
         
         this.setTable();
         this.btnEnable(true);
@@ -168,6 +170,14 @@ public class HorarioController implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor verificar los todos los campos son requeridos...s");
             }
+        }
+        
+        if (e.getSource() == this.viewHorarios.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewHorarios.tblData, "horarios");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

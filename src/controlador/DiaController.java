@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.DiaDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,6 +35,7 @@ public class DiaController implements ActionListener {
         this.viewDia.btnCancelar.addActionListener(this);
         this.viewDia.btnEliminar.addActionListener(this);
         this.viewDia.btnGuardar.addActionListener(this);
+        this.viewDia.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -84,6 +86,14 @@ public class DiaController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewDia.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewDia.tblData, "dias");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

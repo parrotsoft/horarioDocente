@@ -7,6 +7,7 @@ package controlador;
 
 import dao.DiaDaoImpl;
 import dao.DisponibilidadDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,6 +46,7 @@ public class DisponibilidadController implements ActionListener {
         this.viewDisponibilidad.btnCancelar.addActionListener(this);
         this.viewDisponibilidad.btnEliminar.addActionListener(this);
         this.viewDisponibilidad.btnGuardar.addActionListener(this);
+        this.viewDisponibilidad.btnImprimir.addActionListener(this);
         this.setComboBoxDias();
         this.setTable();
         this.btnEnable(true);
@@ -110,6 +112,14 @@ public class DisponibilidadController implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor verificar los todos los campos son requeridos...s");
             }
+        }
+        
+        if (e.getSource() == this.viewDisponibilidad.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewDisponibilidad.tblData, "disponibilidades");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

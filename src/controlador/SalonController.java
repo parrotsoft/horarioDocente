@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.SalonDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +36,7 @@ public class SalonController implements ActionListener {
         this.viewSalon.btnCancelar.addActionListener(this);
         this.viewSalon.btnEliminar.addActionListener(this);
         this.viewSalon.btnGuardar.addActionListener(this);
+        this.viewSalon.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -84,6 +86,14 @@ public class SalonController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewSalon.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewSalon.tblData, "salones");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

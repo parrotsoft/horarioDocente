@@ -54,7 +54,6 @@ public class Principal extends javax.swing.JFrame {
         itemDocentes = new javax.swing.JMenuItem();
         ItemDisponibilidad = new javax.swing.JMenuItem();
         ItemHorarios = new javax.swing.JMenuItem();
-        itemReportes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(65, 105, 170));
@@ -164,9 +163,6 @@ public class Principal extends javax.swing.JFrame {
 
         menuBar.add(itemAdministracion);
 
-        itemReportes.setText("Reportes");
-        menuBar.add(itemReportes);
-
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,7 +242,6 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JDesktopPane desktopPane;
     public javax.swing.JMenu itemAdministracion;
     public javax.swing.JMenuItem itemDocentes;
-    public javax.swing.JMenu itemReportes;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     public javax.swing.JMenuItem mItemRoles;

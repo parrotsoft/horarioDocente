@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.TipoDocumentoDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +36,7 @@ public class TipoDocumentosController implements ActionListener {
         this.viewTipoDocumento.btnCancelar.addActionListener(this);
         this.viewTipoDocumento.btnEliminar.addActionListener(this);
         this.viewTipoDocumento.btnGuardar.addActionListener(this);
+        this.viewTipoDocumento.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -84,6 +86,14 @@ public class TipoDocumentosController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewTipoDocumento.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewTipoDocumento.tblData, "Tipos de Documento");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

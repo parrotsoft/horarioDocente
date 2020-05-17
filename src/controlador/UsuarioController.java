@@ -8,6 +8,7 @@ package controlador;
 import dao.DocenteDaoImpl;
 import dao.RolDaoImpl;
 import dao.UsuarioDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,6 +55,7 @@ public class UsuarioController implements ActionListener {
         this.viewUsuarios.btnCancelar.addActionListener(this);
         this.viewUsuarios.btnEliminar.addActionListener(this);
         this.viewUsuarios.btnGuardar.addActionListener(this);
+        this.viewUsuarios.btnImprimir.addActionListener(this);
         
         this.setTable();
         this.btnEnable(true);
@@ -116,6 +118,14 @@ public class UsuarioController implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor verificar los todos los campos son requeridos...s");
             }
+        }
+        
+        if (e.getSource() == this.viewUsuarios.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewUsuarios.tblData, "usuarios");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

@@ -180,7 +180,6 @@ public class PrincipalController implements ActionListener {
             this.viewPrincipal.ItemUsuarios.setVisible(false);
             this.viewPrincipal.itemDocentes.setVisible(false);
             this.viewPrincipal.ItemHorarios.setVisible(false);
-            this.viewPrincipal.itemReportes.setVisible(false);
         }
     }
 }

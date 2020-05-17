@@ -6,11 +6,13 @@
 package controlador;
 
 import dao.ProgramaDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -34,6 +36,7 @@ public class ProgramaController implements ActionListener {
         this.viewPrograma.btnCancelar.addActionListener(this);
         this.viewPrograma.btnEliminar.addActionListener(this);
         this.viewPrograma.btnGuardar.addActionListener(this);
+        this.viewPrograma.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -83,6 +86,15 @@ public class ProgramaController implements ActionListener {
                 
             }
         }
+        
+        if (e.getSource() == this.viewPrograma.btnImprimir) {
+             try {
+		ExportarExcel.exportarUnaTabla(this.viewPrograma.tblData, "programas");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
+        }
+        
     }
     
     private void setTable() {

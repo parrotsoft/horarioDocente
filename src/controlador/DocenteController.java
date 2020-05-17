@@ -8,6 +8,7 @@ package controlador;
 import dao.DocenteDaoImpl;
 import dao.ProfesionDaoImpl;
 import dao.TipoDocumentoDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,6 +55,7 @@ public class DocenteController implements ActionListener {
         this.viewDocentes.btnCancelar.addActionListener(this);
         this.viewDocentes.btnEliminar.addActionListener(this);
         this.viewDocentes.btnGuardar.addActionListener(this);
+        this.viewDocentes.btnImprimir.addActionListener(this);
         
         this.setTable();
         this.btnEnable(true);
@@ -123,6 +125,14 @@ public class DocenteController implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor verificar los todos los campos son requeridos...s");
             }
+        }
+        
+        if (e.getSource() == this.viewDocentes.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewDocentes.tblData, "docentes");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     

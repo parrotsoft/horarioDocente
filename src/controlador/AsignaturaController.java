@@ -6,6 +6,7 @@
 package controlador;
 
 import dao.AsignaturaDaoImpl;
+import helpers.ExportarExcel;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,6 +35,7 @@ public class AsignaturaController implements ActionListener {
         this.viewAsignatura.btnCancelar.addActionListener(this);
         this.viewAsignatura.btnEliminar.addActionListener(this);
         this.viewAsignatura.btnGuardar.addActionListener(this);
+        this.viewAsignatura.btnImprimir.addActionListener(this);
         this.setTable();
         this.btnEnable(true);
     }
@@ -85,6 +87,14 @@ public class AsignaturaController implements ActionListener {
                 }
                 
             }
+        }
+        
+        if (e.getSource() == this.viewAsignatura.btnImprimir) {
+            try {
+		ExportarExcel.exportarUnaTabla(this.viewAsignatura.tblData, "ASignaturas");
+             } catch (Exception ex) {
+                 JOptionPane.showMessageDialog(null,"Ocurrio un error al querer exportar.","Advertencia",JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
     
